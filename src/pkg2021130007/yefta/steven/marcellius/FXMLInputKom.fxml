@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="352.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLInputKomController">
+   <children>
+      <Label layoutX="188.0" layoutY="14.0" text="Input Data Komputer">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="79.0" text="ID Komputer" />
+      <Label layoutX="54.0" layoutY="143.0" text="Nama Komputer" />
+      <Label layoutX="54.0" layoutY="206.0" text="Jenis" />
+      <TextField fx:id="txtidkom" layoutX="217.0" layoutY="73.0" prefHeight="39.0" prefWidth="280.0" />
+      <TextField fx:id="txtnamakom" layoutX="217.0" layoutY="137.0" prefHeight="39.0" prefWidth="280.0" />
+      <TextField fx:id="txtjenis" layoutX="217.0" layoutY="200.0" prefHeight="39.0" prefWidth="280.0" />
+      <Button fx:id="btnsimpan" layoutX="217.0" layoutY="269.0" mnemonicParsing="false" onAction="#simpanklik" prefHeight="39.0" prefWidth="84.0" text="Simpan" />
+      <Button fx:id="btnhapus" layoutX="412.0" layoutY="269.0" mnemonicParsing="false" onAction="#hapusklik" prefHeight="39.0" prefWidth="84.0" text="Hapus" />
+   </children>
+</AnchorPane>
