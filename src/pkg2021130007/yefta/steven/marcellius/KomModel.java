@@ -11,6 +11,15 @@ package pkg2021130007.yefta.steven.marcellius;
  */
 public class KomModel {
     String idkomp, namakomp, jenis;
+    double harga;
+
+    public double getHarga() {
+        return harga;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
 
     public String getIdkomp() {
         return idkomp;

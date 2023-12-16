@@ -58,137 +58,147 @@ public class FXMLDisplayKomController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showdata();
-    }   
-    
-     public void showdata(){
-        ObservableList<KomModel> data=FXMLDocumentController.dtkom.Load();
-        if(data!=null){            
-            tbvkom.getColumns().clear();            
+    }
+
+    public void showdata() {
+        ObservableList<KomModel> data = FXMLDocumentController.dtkom.Load();
+        if (data != null) {
+            tbvkom.getColumns().clear();
             tbvkom.getItems().clear();
 
-            TableColumn col=new TableColumn("ID Komputer");
+            TableColumn col = new TableColumn("ID Komputer");
             col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("idkomp"));
             tbvkom.getColumns().addAll(col);
-            col=new TableColumn("Nama Komputer");
+            col = new TableColumn("Nama Komputer");
             col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("namakomp"));
             tbvkom.getColumns().addAll(col);
-            col=new TableColumn("Jenis");
+            col = new TableColumn("Jenis");
             col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("jenis"));
             tbvkom.getColumns().addAll(col);
-            
+            col = new TableColumn("Harga (per jam)");
+            col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("harga"));
+            tbvkom.getColumns().addAll(col);
+
             tbvkom.setItems(data);
-            
-    }else {  Alert a=new Alert(Alert.AlertType.ERROR,"Data is empty",ButtonType.OK);
+
+        } else {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Data is empty", ButtonType.OK);
             a.showAndWait();
             tbvkom.getScene().getWindow().hide();
-        }                
-     }
+        }
+    }
 
     @FXML
     private void tambahklik(ActionEvent event) {
-      try{
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("FXMLInputKom.fxml"));    
-        Parent root = (Parent)loader.load();        
-        Scene scene = new Scene(root);        
-        Stage stg=new Stage();
-        stg.initModality(Modality.APPLICATION_MODAL);
-        stg.setResizable(false);        
-        stg.setIconified(false);        
-        stg.setScene(scene);
-        stg.showAndWait();
-        } catch (IOException e){   
-            e.printStackTrace();   }
-        showdata();        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLInputKom.fxml"));
+            Parent root = (Parent) loader.load();
+            Scene scene = new Scene(root);
+            Stage stg = new Stage();
+            stg.initModality(Modality.APPLICATION_MODAL);
+            stg.setResizable(false);
+            stg.setIconified(false);
+            stg.setScene(scene);
+            stg.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        showdata();
         //awalklik(event);
     }
 
     @FXML
     private void hapusklik(ActionEvent event) {
-        KomModel s= new KomModel();       
-        s=tbvkom.getSelectionModel().getSelectedItem();
-        Alert a=new Alert(Alert.AlertType.CONFIRMATION,"Mau dihapus?",ButtonType.YES,ButtonType.NO);
+        KomModel s = new KomModel();
+        s = tbvkom.getSelectionModel().getSelectedItem();
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Mau dihapus?", ButtonType.YES, ButtonType.NO);
         a.showAndWait();
-        if(a.getResult()==ButtonType.YES){
-           if(FXMLDocumentController.dtkom.delete(s.getIdkomp())){
-               Alert b=new Alert(Alert.AlertType.INFORMATION,"Data berhasil dihapus", ButtonType.OK);
-               b.showAndWait();
-           } else {
-               Alert b=new Alert(Alert.AlertType.ERROR,"Data gagal dihapus", ButtonType.OK);
-               b.showAndWait();               
-           }    
-           showdata();           
-           //awalklik(event);       
-        }    
+        if (a.getResult() == ButtonType.YES) {
+            if (FXMLDocumentController.dtkom.delete(s.getIdkomp())) {
+                Alert b = new Alert(Alert.AlertType.INFORMATION, "Data berhasil dihapus", ButtonType.OK);
+                b.showAndWait();
+            } else {
+                Alert b = new Alert(Alert.AlertType.ERROR, "Data gagal dihapus", ButtonType.OK);
+                b.showAndWait();
+            }
+            showdata();
+            //awalklik(event);       
+        }
     }
 
     @FXML
     private void akhirklik(ActionEvent event) {
-         tbvkom.getSelectionModel().selectLast();
+        tbvkom.getSelectionModel().selectLast();
     }
 
     @FXML
     private void sesudahklik(ActionEvent event) {
-         tbvkom.getSelectionModel().selectNext();
+        tbvkom.getSelectionModel().selectNext();
     }
 
     @FXML
     private void sebelumklik(ActionEvent event) {
-         tbvkom.getSelectionModel().selectPrevious();
+        tbvkom.getSelectionModel().selectPrevious();
     }
 
     @FXML
     private void awalklik(ActionEvent event) {
-         tbvkom.getSelectionModel().selectFirst();
+        tbvkom.getSelectionModel().selectFirst();
     }
 
     @FXML
     private void cariData(javafx.scene.input.KeyEvent event) {
         KomModel s = new KomModel();
         String key = txtcari.getText();
-        if(key!=""){
-        ObservableList<KomModel> data=FXMLDocumentController.dtkom.CariKom(key,key);
-        if(data!=null){            
-            tbvkom.getColumns().clear();
-            tbvkom.getItems().clear();
-            
-            TableColumn col=new TableColumn("ID Komputer");
-            col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("idkomp"));
-            tbvkom.getColumns().addAll(col);
-            col=new TableColumn("Nama Komputer");
-            col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("namakomp"));
-            tbvkom.getColumns().addAll(col);
-            col=new TableColumn("Jenis");
-            col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("jenis"));
-            tbvkom.getColumns().addAll(col);
-            tbvkom.setItems(data);
-        }else {
-            Alert a=new Alert(Alert.AlertType.ERROR,"Data kosong",ButtonType.OK);
-            a.showAndWait();
-            tbvkom.getScene().getWindow().hide();;
-        }            
-            } else{
-               showdata();
-            }        
+        if (key != "") {
+            ObservableList<KomModel> data = FXMLDocumentController.dtkom.CariKom(key, key);
+            if (data != null) {
+                tbvkom.getColumns().clear();
+                tbvkom.getItems().clear();
+
+                TableColumn col = new TableColumn("ID Komputer");
+                col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("idkomp"));
+                tbvkom.getColumns().addAll(col);
+                col = new TableColumn("Nama Komputer");
+                col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("namakomp"));
+                tbvkom.getColumns().addAll(col);
+                col = new TableColumn("Jenis");
+                col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("jenis"));
+                tbvkom.getColumns().addAll(col);
+                col = new TableColumn("Harga (per jam)");
+                col.setCellValueFactory(new PropertyValueFactory<KomModel, String>("harga"));
+                tbvkom.getColumns().addAll(col);
+                tbvkom.setItems(data);
+            } else {
+                Alert a = new Alert(Alert.AlertType.ERROR, "Data kosong", ButtonType.OK);
+                a.showAndWait();
+                tbvkom.getScene().getWindow().hide();;
+            }
+        } else {
+            showdata();
+        }
     }
 
     @FXML
     private void ubahklik(ActionEvent event) {
-        KomModel s= new KomModel();
-        s=tbvkom.getSelectionModel().getSelectedItem();
-        try{
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("FXMLInputKom.fxml"));    
-        Parent root = (Parent)loader.load();
-        FXMLInputKomController isidt=(FXMLInputKomController)loader.getController();
-        isidt.execute(s);                
-        Scene scene = new Scene(root);
-        Stage stg=new Stage();
-        stg.initModality(Modality.APPLICATION_MODAL);
-        stg.setResizable(false);
-        stg.setIconified(false);
-        stg.setScene(scene);
-        stg.showAndWait();
-        } catch (IOException e){   e.printStackTrace();   }
-        showdata();  
+        KomModel s = new KomModel();
+        s = tbvkom.getSelectionModel().getSelectedItem();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLInputKom.fxml"));
+            Parent root = (Parent) loader.load();
+            FXMLInputKomController isidt = (FXMLInputKomController) loader.getController();
+            isidt.execute(s);
+            Scene scene = new Scene(root);
+            Stage stg = new Stage();
+            stg.initModality(Modality.APPLICATION_MODAL);
+            stg.setResizable(false);
+            stg.setIconified(false);
+            stg.setScene(scene);
+            stg.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        showdata();
         awalklik(event);
 
     }

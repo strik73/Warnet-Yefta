@@ -26,14 +26,15 @@ public class DBKom {
             Koneksi con = new Koneksi();            
             con.bukaKoneksi();
             con.statement = con.dbKoneksi.createStatement();
-            ResultSet rs = con.statement.executeQuery("Select idkomp, namakomp, jenis from komputer");
+            ResultSet rs = con.statement.executeQuery("Select idkomp, namakomp, jenis, harga from komputer");
 
             int i = 1;
             while (rs.next()) {
                 KomModel d=new KomModel();
                 d.setIdkomp(rs.getString("idkomp"));                
                 d.setNamakomp(rs.getString("namakomp"));
-                d.setJenis(rs.getString("jenis"));                 
+                d.setJenis(rs.getString("jenis")); 
+                d.setHarga(rs.getDouble("harga"));                 
                 tableData.add(d);                
                 i++;            
             }
@@ -67,10 +68,11 @@ public class DBKom {
         Koneksi con = new Koneksi();
         try {       
             con.bukaKoneksi();
-            con.preparedStatement = con.dbKoneksi.prepareStatement("insert into komputer (idkomp, namakomp, jenis) values (?,?,?)");
+            con.preparedStatement = con.dbKoneksi.prepareStatement("insert into komputer (idkomp, namakomp, jenis, harga) values (?,?,?,?)");
             con.preparedStatement.setString(1, getKomModel().getIdkomp());           
             con.preparedStatement.setString(2, getKomModel().getNamakomp());
-            con.preparedStatement.setString(3, getKomModel().getJenis());           
+            con.preparedStatement.setString(3, getKomModel().getJenis());        
+            con.preparedStatement.setDouble(4, getKomModel().getHarga());     
             con.preparedStatement.executeUpdate();
             berhasil = true;
         } catch (Exception e) {            
@@ -104,10 +106,11 @@ public class DBKom {
         Koneksi con = new Koneksi();
         try {            
             con.bukaKoneksi();
-            con.preparedStatement = con.dbKoneksi.prepareStatement("update komputer set namakomp = ?, jenis = ? where idkomp = ? ");
+            con.preparedStatement = con.dbKoneksi.prepareStatement("update komputer set namakomp = ?, jenis = ?, harga = ? where idkomp = ? ");
             con.preparedStatement.setString(1, getKomModel().getNamakomp());
             con.preparedStatement.setString(2, getKomModel().getJenis());
-            con.preparedStatement.setString(3, getKomModel().getIdkomp());
+            con.preparedStatement.setDouble(3, getKomModel().getHarga());
+            con.preparedStatement.setString(4, getKomModel().getIdkomp());
             con.preparedStatement.executeUpdate();            
             berhasil = true;
         } catch (Exception e) {            
@@ -133,6 +136,7 @@ public class DBKom {
             d.setIdkomp(rs.getString("idkomp"));
             d.setNamakomp(rs.getString("namakomp"));
             d.setJenis(rs.getString("jenis"));
+            d.setHarga(rs.getDouble("harga"));
             tableData.add(d);
             i++;
         }

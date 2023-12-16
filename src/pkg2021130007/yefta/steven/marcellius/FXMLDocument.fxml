@@ -21,6 +21,12 @@
                   <MenuItem fx:id="InputKom" mnemonicParsing="false" onAction="#InputKomKlik" text="Komputer" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Billing">
+              <items>
+                <MenuItem fx:id="DisplayTarif" mnemonicParsing="false" onAction="#DisplayTarifKlik" text="Tarif" />
+                  <MenuItem fx:id="DataTransaksi" mnemonicParsing="false" onAction="#transaksiklik" text="Transaksi" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>
