@@ -7,7 +7,11 @@ package pkg2021130007.yefta.steven.marcellius;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,10 +47,20 @@ public class FXMLDocumentController implements Initializable {
     private MenuItem DisplayTarif;
     @FXML
     private MenuItem DataTransaksi;
+    @FXML
+    private Label txtwaktu;
+    
+    Timer t=new Timer();        
+    SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy,hh:mm:ss");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         t.scheduleAtFixedRate(new TimerTask(){           
+      @Override           public void run(){
+       Platform.runLater(() -> {
+                 txtwaktu.setText(sdf.format(new java.util.Date()));
+           });}
+        }, 0, 1000);          
     }
 
     @FXML

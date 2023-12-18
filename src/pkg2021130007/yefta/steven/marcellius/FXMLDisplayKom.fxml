@@ -79,6 +79,11 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="txtcari" layoutX="38.0" layoutY="72.0" onKeyReleased="#cariData" prefHeight="39.0" prefWidth="315.0" promptText="Search Bar..." />
+      <TextField fx:id="txtcari" layoutX="38.0" layoutY="72.0" onKeyReleased="#cariData" prefHeight="39.0" prefWidth="315.0" promptText="Cari komputer..." />
+      <ImageView fitHeight="68.0" fitWidth="82.0" layoutX="639.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/logo.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

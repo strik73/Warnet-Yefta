@@ -7,12 +7,14 @@ package pkg2021130007.yefta.steven.marcellius;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 /**
@@ -36,13 +38,23 @@ public class FXMLInputKomController implements Initializable {
     boolean editdata = false;
     @FXML
     private TextField txtharga;
+    @FXML
+    private ComboBox<String> combojenis;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+ combojenis.setItems(FXCollections.observableArrayList("Normal", "Premium", "Esport"));
+
+        // Add a listener to the ComboBox to handle the selection change
+        combojenis.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            // newValue contains the selected item from the ComboBox
+            // You can use it to set the "jenis" field or perform any other actions
+            // For example, if "jenis" is a TextField, you can set its text like this:
+            txtjenis.setText(newValue);
+        });
     }
 
     public void execute(KomModel d) {
@@ -50,7 +62,7 @@ public class FXMLInputKomController implements Initializable {
             editdata = true;
             txtidkom.setText(d.getIdkomp());
             txtnamakom.setText(d.getNamakomp());
-            txtjenis.setText(d.getJenis());
+//            txtjenis.setText(d.getJenis());
             txtharga.setText(String.valueOf(d.getHarga()));
             txtidkom.setEditable(false);
             txtnamakom.requestFocus();

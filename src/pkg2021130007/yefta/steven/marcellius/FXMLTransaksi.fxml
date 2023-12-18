@@ -6,50 +6,57 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="844.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLTransaksiController">
+<AnchorPane id="AnchorPane" prefHeight="802.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLTransaksiController">
    <children>
-      <Label layoutX="28.0" layoutY="31.0" prefHeight="37.0" prefWidth="341.0" text="Form Transaksi Billing Warnet">
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="341.0" text="Transaksi Billing Warnet" underline="true">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="93.0" prefHeight="37.0" prefWidth="87.0" text="Kode Tarif" />
-      <TextField fx:id="txtkodetarif" layoutX="134.0" layoutY="97.0" prefHeight="29.0" prefWidth="217.0" />
-      <Label layoutX="28.0" layoutY="139.0" prefHeight="37.0" prefWidth="87.0" text="Tanggal" />
-      <DatePicker fx:id="dtptanggal" layoutX="135.0" layoutY="142.0" prefHeight="29.0" prefWidth="214.0" />
-      <TableView fx:id="tbvmem" layoutX="37.0" layoutY="230.0" onMouseClicked="#tbvmemklik" prefHeight="200.0" prefWidth="341.0">
+      <Label layoutX="23.0" layoutY="67.0" prefHeight="37.0" prefWidth="87.0" text="Kode Tarif" />
+      <TextField fx:id="txtkodetarif" layoutX="116.0" layoutY="73.0" prefHeight="17.0" prefWidth="217.0" />
+      <Label layoutX="23.0" layoutY="109.0" prefHeight="37.0" prefWidth="87.0" text="Tanggal" />
+      <DatePicker fx:id="dtptanggal" layoutX="118.0" layoutY="116.0" prefHeight="25.0" prefWidth="214.0" />
+      <TableView fx:id="tbvmem" layoutX="24.0" layoutY="203.0" onMouseClicked="#tbvmemklik" prefHeight="162.0" prefWidth="341.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <TableView fx:id="tbvkom" disable="true" layoutX="431.0" layoutY="230.0" onMouseClicked="#tbvkomklik" prefHeight="200.0" prefWidth="341.0">
+      <TableView fx:id="tbvkom" disable="true" layoutX="418.0" layoutY="203.0" onMouseClicked="#tbvkomklik" prefHeight="161.0" prefWidth="341.0">
          <columns>
             <TableColumn prefWidth="75.0" text="C1" />
             <TableColumn prefWidth="75.0" text="C2" />
          </columns>
       </TableView>
-      <Label layoutX="37.0" layoutY="208.0" text="Daftar Member" />
-      <Label layoutX="431.0" layoutY="206.0" text="Daftar Komputer" />
-      <Label layoutX="48.0" layoutY="456.0" text="ID Member" />
-      <Label layoutX="441.0" layoutY="462.0" text="ID Komputer" />
-      <TextField fx:id="txtidkom" layoutX="559.0" layoutY="459.0" prefHeight="30.0" prefWidth="213.0" />
-      <Label layoutX="441.0" layoutY="515.0" text="Durasi Billing" />
-      <TextField fx:id="txtdurasi" layoutX="559.0" layoutY="506.0" prefHeight="30.0" prefWidth="213.0" />
-      <TableView fx:id="tbvdetil" layoutX="43.0" layoutY="576.0" prefHeight="240.0" prefWidth="335.0">
+      <Label layoutX="24.0" layoutY="181.0" text="Daftar Member" />
+      <Label layoutX="418.0" layoutY="179.0" text="Daftar Komputer" />
+      <Label layoutX="30.0" layoutY="389.0" text="ID Member" />
+      <Label layoutX="424.0" layoutY="388.0" text="ID Komputer" />
+      <TextField fx:id="txtidkom" layoutX="541.0" layoutY="384.0" prefHeight="30.0" prefWidth="213.0" />
+      <Label layoutX="424.0" layoutY="436.0" text="Durasi Billing" />
+      <TextField fx:id="txtdurasi" layoutX="542.0" layoutY="431.0" prefHeight="30.0" prefWidth="213.0" />
+      <TableView fx:id="tbvdetil" layoutX="40.0" layoutY="535.0" prefHeight="240.0" prefWidth="719.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="btncancel" layoutX="596.0" layoutY="109.0" mnemonicParsing="false" onAction="#cancelklik" prefHeight="40.0" prefWidth="112.0" text="Cancel" />
-      <Button fx:id="btnsave" layoutX="458.0" layoutY="108.0" mnemonicParsing="false" onAction="#saveklik" prefHeight="40.0" prefWidth="112.0" text="Save" />
-      <TextField fx:id="txtid" layoutX="122.0" layoutY="453.0" prefHeight="30.0" prefWidth="213.0" />
-      <Button fx:id="btntambah" layoutX="560.0" layoutY="555.0" mnemonicParsing="false" onAction="#tambahklik" prefHeight="40.0" prefWidth="77.0" text="Tambah" />
-      <Button fx:id="btnhapus" layoutX="695.0" layoutY="556.0" mnemonicParsing="false" onAction="#hapusklik" prefHeight="40.0" prefWidth="77.0" text="Hapus" />
-      <Label layoutX="43.0" layoutY="543.0" prefHeight="37.0" prefWidth="87.0" text="List Transaksi" />
+      <Button fx:id="btncancel" layoutX="416.0" layoutY="114.0" mnemonicParsing="false" onAction="#cancelklik" prefHeight="30.0" prefWidth="81.0" text="Cancel" />
+      <Button fx:id="btnsave" layoutX="416.0" layoutY="73.0" mnemonicParsing="false" onAction="#saveklik" prefHeight="30.0" prefWidth="81.0" text="Save" />
+      <TextField fx:id="txtid" layoutX="111.0" layoutY="384.0" prefHeight="30.0" prefWidth="213.0" />
+      <Button fx:id="btntambah" layoutX="549.0" layoutY="475.0" mnemonicParsing="false" onAction="#tambahklik" prefHeight="40.0" prefWidth="77.0" text="Tambah" />
+      <Button fx:id="btnhapus" layoutX="649.0" layoutY="475.0" mnemonicParsing="false" onAction="#hapusklik" prefHeight="40.0" prefWidth="77.0" text="Hapus" />
+      <Label layoutX="40.0" layoutY="502.0" prefHeight="37.0" prefWidth="87.0" text="List Transaksi" />
+      <ImageView fitHeight="115.0" fitWidth="111.0" layoutX="608.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/logo.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
