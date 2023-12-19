@@ -48,88 +48,91 @@ inner join komputer k on k.idkomp = d.idkomp]]>
 	<group name="mtarif">
 		<groupExpression><![CDATA[$F{idkomp}]]></groupExpression>
 		<groupHeader>
-			<band height="198">
+			<band height="164">
 				<staticText>
 					<reportElement x="20" y="14" width="100" height="20" uuid="6a65a213-1822-40ed-ab40-83059033c909"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
-					<text><![CDATA[Kode Tarif]]></text>
+					<text><![CDATA[Kode Tarif :]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="133" y="14" width="100" height="20" uuid="254b530b-4959-4257-972f-a0521466e909"/>
+					<reportElement x="120" y="14" width="100" height="20" uuid="254b530b-4959-4257-972f-a0521466e909"/>
 					<textFieldExpression><![CDATA[$F{kodetarif}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="20" y="46" width="100" height="20" uuid="6f4b1692-ebe5-4c6e-90ec-ad6f8120b1c4"/>
+					<reportElement x="20" y="34" width="100" height="20" uuid="6f4b1692-ebe5-4c6e-90ec-ad6f8120b1c4"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
-					<text><![CDATA[ID Member]]></text>
+					<text><![CDATA[ID Member :]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="133" y="46" width="100" height="20" uuid="c9db1423-128d-4f27-9a2e-7ad3ca3ab1b8"/>
+					<reportElement x="120" y="34" width="100" height="20" uuid="c9db1423-128d-4f27-9a2e-7ad3ca3ab1b8"/>
 					<textFieldExpression><![CDATA[$F{idmember}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="20" y="90" width="100" height="20" uuid="560b34cd-0fa3-4a01-bc17-cf646b4ca576"/>
+					<reportElement x="20" y="76" width="100" height="20" uuid="560b34cd-0fa3-4a01-bc17-cf646b4ca576"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
-					<text><![CDATA[Nama / User]]></text>
+					<text><![CDATA[Nama / User :]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="133" y="90" width="100" height="20" uuid="9256b837-1442-4858-a2b3-a4b780e6a698"/>
+					<reportElement x="120" y="76" width="100" height="20" uuid="9256b837-1442-4858-a2b3-a4b780e6a698"/>
 					<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="338" y="14" width="100" height="20" uuid="97052421-3251-43da-8942-8ab45e9c73db"/>
+					<reportElement x="338" y="76" width="64" height="20" uuid="97052421-3251-43da-8942-8ab45e9c73db"/>
 					<textElement>
-						<font isBold="true"/>
+						<font size="12" isBold="true"/>
 					</textElement>
-					<text><![CDATA[Tanggal]]></text>
+					<text><![CDATA[Tanggal :]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="438" y="14" width="100" height="20" uuid="0cfb0824-b2e4-41c1-9803-5963aba1cb46"/>
+					<reportElement x="402" y="76" width="100" height="20" uuid="0cfb0824-b2e4-41c1-9803-5963aba1cb46"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="133" y="110" width="100" height="20" uuid="b898813b-f39b-47e7-a0e2-80b9251de8fd"/>
+					<reportElement x="120" y="96" width="100" height="20" uuid="b898813b-f39b-47e7-a0e2-80b9251de8fd"/>
 					<textFieldExpression><![CDATA[$F{userid}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="20" y="168" width="100" height="20" uuid="7ddeead8-2e3b-44f0-b88f-043fbb5416e8"/>
+					<reportElement x="20" y="142" width="100" height="20" uuid="7ddeead8-2e3b-44f0-b88f-043fbb5416e8"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[ID  Komputer]]></text>
 				</staticText>
 				<line>
-					<reportElement x="0" y="148" width="555" height="1" uuid="75b4d1b8-13f6-48c6-a7aa-fbbab920bea5"/>
+					<reportElement x="0" y="129" width="555" height="1" uuid="75b4d1b8-13f6-48c6-a7aa-fbbab920bea5"/>
 				</line>
 				<staticText>
-					<reportElement x="133" y="168" width="68" height="20" uuid="2a6c6a80-6c83-43b3-bd6a-568853bc6975"/>
+					<reportElement x="133" y="142" width="68" height="20" uuid="2a6c6a80-6c83-43b3-bd6a-568853bc6975"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[Jenis]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="227" y="168" width="49" height="20" uuid="353e1a70-b08f-4cc5-8d67-68f50ec9e8b3"/>
+					<reportElement x="227" y="142" width="49" height="20" uuid="353e1a70-b08f-4cc5-8d67-68f50ec9e8b3"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[Durasi]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="302" y="168" width="100" height="20" uuid="1bcd09f2-acb9-4db6-b052-827458332730"/>
+					<reportElement x="302" y="142" width="100" height="20" uuid="1bcd09f2-acb9-4db6-b052-827458332730"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<text><![CDATA[Harga (per jam)]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="426" y="168" width="100" height="20" uuid="bb6923d3-b45a-4a31-b45d-b8b0c9d93c5c"/>
+					<reportElement x="426" y="142" width="100" height="20" uuid="bb6923d3-b45a-4a31-b45d-b8b0c9d93c5c"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
@@ -140,11 +143,11 @@ inner join komputer k on k.idkomp = d.idkomp]]>
 		<groupFooter>
 			<band height="57">
 				<textField>
-					<reportElement x="378" y="0" width="79" height="20" uuid="5e355083-0352-4181-8638-f157c858b206"/>
+					<reportElement x="378" y="6" width="79" height="20" uuid="5e355083-0352-4181-8638-f157c858b206"/>
 					<textFieldExpression><![CDATA["Rp. "+$V{total}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="302" y="0" width="76" height="20" uuid="f62d5259-528c-4a75-9699-df2d85a33199"/>
+					<reportElement x="302" y="6" width="76" height="20" uuid="f62d5259-528c-4a75-9699-df2d85a33199"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
@@ -154,7 +157,7 @@ inner join komputer k on k.idkomp = d.idkomp]]>
 					<reportElement x="0" y="34" width="555" height="7" forecolor="#F0F0F0" backcolor="#006633" uuid="28db5f1e-3be8-44f4-9ad9-53bbfc3a078a"/>
 				</rectangle>
 				<line>
-					<reportElement x="302" y="20" width="155" height="1" uuid="1834ff47-1c38-4bb7-98d1-63ab4e5d33b0"/>
+					<reportElement x="302" y="26" width="138" height="1" uuid="1834ff47-1c38-4bb7-98d1-63ab4e5d33b0"/>
 				</line>
 			</band>
 		</groupFooter>
@@ -163,27 +166,42 @@ inner join komputer k on k.idkomp = d.idkomp]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="56" splitType="Stretch">
+		<band height="72" splitType="Stretch">
 			<staticText>
-				<reportElement x="20" y="14" width="281" height="28" uuid="c19082bd-a066-4bf4-82ae-861bdfd1c9fd"/>
+				<reportElement x="10" y="0" width="358" height="42" uuid="c19082bd-a066-4bf4-82ae-861bdfd1c9fd"/>
 				<textElement>
-					<font size="22"/>
+					<font size="26"/>
 				</textElement>
 				<text><![CDATA[Report Pembelian Billing]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="20" y="44" width="517" height="7" forecolor="#F0F0F0" backcolor="#00CC00" uuid="28961ef5-8839-40d9-8be4-3f4d215c3a8e"/>
+				<reportElement x="9" y="36" width="293" height="6" forecolor="#F0F0F0" backcolor="#51507A" uuid="28961ef5-8839-40d9-8be4-3f4d215c3a8e"/>
 			</rectangle>
+			<staticText>
+				<reportElement x="11" y="45" width="122" height="27" forecolor="#666666" uuid="02dc812c-a22f-4fd4-9be4-cb6a2fe40686"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Warnet MOD]]></text>
+			</staticText>
+			<image>
+				<reportElement x="457" y="-10" width="82" height="82" uuid="3b06bc2d-462e-483a-882f-63515231b7c5"/>
+				<imageExpression><![CDATA["D:\\Yefta\\Kuliah\\Semester 5\\PBOL\\Warnet-Yefta\\src\\images\\logo.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="6" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="5" splitType="Stretch"/>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="14" width="555" height="7" forecolor="#F0F0F0" backcolor="#006633" uuid="1ec84076-3458-4d67-b78b-52e0d195c263"/>
+			</rectangle>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="56" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<textField>
 				<reportElement x="20" y="0" width="100" height="20" uuid="3683570b-56a1-466f-8324-a8bc9a09669a"/>
 				<textFieldExpression><![CDATA[$F{idkomp}]]></textFieldExpression>

@@ -8,8 +8,13 @@ package pkg2021130007.yefta.steven.marcellius;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -145,6 +150,21 @@ public class DBKom {
         }catch(Exception e){
             e.printStackTrace();
             return null;
+        }
+    }
+        
+        public void CetakReportKomp() {
+        Koneksi con = new Koneksi();
+        String is = "./src/pkg2021130007/yefta/steven/marcellius/ReportKomp.jasper";
+        Map map = new HashMap();
+        map.put("judul", "Report Master");
+        con.bukaKoneksi();
+        try {
+            JasperPrint jasperPrint = JasperFillManager.fillReport(is, map, con.dbKoneksi);
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            con.tutupKoneksi();
         }
     }
 }

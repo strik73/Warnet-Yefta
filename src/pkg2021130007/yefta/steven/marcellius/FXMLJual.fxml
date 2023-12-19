@@ -8,29 +8,37 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLJualController">
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="578.0" style="-fx-background-color: #352F44;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLJualController">
    <children>
-      <Label layoutX="41.0" layoutY="37.0" text="Kode Tarif" />
-      <TextField fx:id="txtkodetarif" layoutX="113.0" layoutY="33.0" promptText="Cari kode tarif..." />
-      <TableView fx:id="tbvtarif" layoutX="41.0" layoutY="73.0" onMouseClicked="#pilihdata" prefHeight="200.0" prefWidth="499.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LINEN" height="546.0" layoutX="24.0" layoutY="71.0" stroke="BLACK" strokeType="INSIDE" width="533.0" />
+      <Label layoutX="39.0" layoutY="87.0" text="Kode Tarif" />
+      <TextField fx:id="txtkodetarif" layoutX="111.0" layoutY="83.0" promptText="Cari kode tarif..." />
+      <TableView fx:id="tbvtarif" layoutX="39.0" layoutY="118.0" onMouseClicked="#pilihdata" prefHeight="200.0" prefWidth="499.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="btnhapus" layoutX="42.0" layoutY="280.0" mnemonicParsing="false" onAction="#hapusklik" prefHeight="32.0" prefWidth="79.0" text="Delete" />
-      <TableView fx:id="tbvdetil" layoutX="42.0" layoutY="349.0" prefHeight="200.0" prefWidth="499.0">
+      <Button fx:id="btnhapus" layoutX="40.0" layoutY="325.0" mnemonicParsing="false" onAction="#hapusklik" prefHeight="32.0" prefWidth="79.0" text="Delete" />
+      <TableView fx:id="tbvdetil" layoutX="40.0" layoutY="405.0" prefHeight="200.0" prefWidth="499.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <ImageView fitHeight="48.0" fitWidth="54.0" layoutX="493.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="55.0" fitWidth="54.0" layoutX="264.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/logo.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="43.0" layoutY="329.0" text="Detail Transaksi" />
+      <Label layoutX="41.0" layoutY="385.0" text="Detail Transaksi" />
+      <Label layoutX="25.0" layoutY="19.0" text="Detail Pembelian Billing" textFill="WHITE" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

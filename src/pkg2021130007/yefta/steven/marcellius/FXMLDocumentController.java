@@ -49,18 +49,22 @@ public class FXMLDocumentController implements Initializable {
     private MenuItem DataTransaksi;
     @FXML
     private Label txtwaktu;
-    
-    Timer t=new Timer();        
-    SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy,hh:mm:ss");
+
+    Timer t = new Timer();
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy,hh:mm:ss");
+    @FXML
+    private MenuItem laporanmaster;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         t.scheduleAtFixedRate(new TimerTask(){           
-      @Override           public void run(){
-       Platform.runLater(() -> {
-                 txtwaktu.setText(sdf.format(new java.util.Date()));
-           });}
-        }, 0, 1000);          
+        t.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    txtwaktu.setText(sdf.format(new java.util.Date()));
+                });
+            }
+        }, 0, 1000);
     }
 
     @FXML
@@ -163,6 +167,16 @@ public class FXMLDocumentController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void laporanklik(ActionEvent event) {
+        dttarif.CetakReportMaster();
+    }
+
+    @FXML
+    private void laporankompklik(ActionEvent event) {
+        dtkom.CetakReportKomp();
     }
 
 }

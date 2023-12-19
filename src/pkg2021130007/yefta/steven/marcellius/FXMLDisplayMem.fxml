@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLDisplayMemController">
+<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="780.0" style="-fx-background-color: #352F44;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLDisplayMemController">
    <children>
       <TableView fx:id="tbvmem" layoutX="33.0" layoutY="133.0" prefHeight="350.0" prefWidth="710.0">
         <columns>
@@ -18,7 +18,7 @@
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Label layoutX="33.0" layoutY="31.0" text="Data Member Warnet">
+      <Label layoutX="33.0" layoutY="31.0" text="Data Member Warnet" textFill="WHITE" underline="true">
          <font>
             <Font size="24.0" />
          </font>
@@ -80,7 +80,7 @@
             </ImageView>
          </graphic></Button>
       <TextField fx:id="txtcari" layoutX="36.0" layoutY="81.0" onKeyReleased="#cariData" prefHeight="39.0" prefWidth="335.0" promptText="Search Bar..." />
-      <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="667.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="639.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/logo.jpg" />
          </image>

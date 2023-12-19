@@ -70,11 +70,14 @@ public class FXMLTransaksiController implements Initializable {
             tbvmem.getColumns().clear();
             tbvmem.getItems().clear();
 
-            TableColumn col = new TableColumn("idmember");
+            TableColumn col = new TableColumn("ID Member");
             col.setCellValueFactory(new PropertyValueFactory<MemModel, String>("idmember"));
             tbvmem.getColumns().addAll(col);
-            col = new TableColumn("nama");
+            col = new TableColumn("Nama");
             col.setCellValueFactory(new PropertyValueFactory<MemModel, String>("nama"));
+            tbvmem.getColumns().addAll(col);
+            col = new TableColumn("User");
+            col.setCellValueFactory(new PropertyValueFactory<MemModel, String>("userid"));
             tbvmem.getColumns().addAll(col);
 
             tbvmem.setItems(data);
@@ -157,6 +160,15 @@ public class FXMLTransaksiController implements Initializable {
 
     @FXML
     private void cancelklik(ActionEvent event) {
+        txtkodetarif.setText("");
+        dtptanggal.setValue(null);
+        txtid.setText("");
+        txtidkom.setText("");
+        txtdurasi.setText("");
+        
+        tbvkom.disableProperty().setValue(Boolean.TRUE);
+        txtidkom.editableProperty().setValue(Boolean.FALSE);
+        txtdurasi.editableProperty().setValue(Boolean.FALSE);
 
     }
 
@@ -171,7 +183,6 @@ public class FXMLTransaksiController implements Initializable {
         if (FXMLDocumentController.dttarif.insert()) {
             Alert a = new Alert(Alert.AlertType.INFORMATION, "Data berhasil disimpan", ButtonType.OK);
             a.showAndWait();
-            cancelklik(event);
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR, "Data gagal disimpan", ButtonType.OK);
             a.showAndWait();
@@ -192,7 +203,6 @@ public class FXMLTransaksiController implements Initializable {
         if (FXMLDocumentController.dtdetil.insert()) {
             Alert a = new Alert(Alert.AlertType.INFORMATION, "Barang berhasil disimpan", ButtonType.OK);
             a.showAndWait();
-            cancelklik(event);
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR, "Barang gagal disimpan", ButtonType.OK);
             a.showAndWait();

@@ -11,6 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+
 
 /**
  *
@@ -135,17 +141,18 @@ public class DBTarif {
         }
     }
 
-//    public void CetakReportMaster() {
-//        Koneksi con = new Koneksi();
-//        String is = "./src/penjualan/yefta/ReportJualMaster.jasper";
-//        Map map = new HashMap();
-//        map.put("judul", "Report Master");
-//        con.bukaKoneksi();
-//        try {
-//            JasperPrint jasperPrint = JasperFillManager.fillReport(is, map, con.dbKoneksi);
-//            JasperViewer.viewReport(jasperPrint, false);
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//            con.tutupKoneksi();
-//        }
+    public void CetakReportMaster() {
+        Koneksi con = new Koneksi();
+        String is = "./src/pkg2021130007/yefta/steven/marcellius/ReportMaster.jasper";
+        Map map = new HashMap();
+        map.put("judul", "Report Master");
+        con.bukaKoneksi();
+        try {
+            JasperPrint jasperPrint = JasperFillManager.fillReport(is, map, con.dbKoneksi);
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            con.tutupKoneksi();
+        }
     }
+}

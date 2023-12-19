@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="442.0" style="-fx-background-color: #252425;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="442.0" style="-fx-background-color: #252425;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2021130007.yefta.steven.marcellius.FXMLDocumentController">
    <children>
       <MenuBar prefHeight="31.0" prefWidth="722.0">
         <menus>
@@ -30,6 +35,12 @@
                 <MenuItem fx:id="DisplayTarif" mnemonicParsing="false" onAction="#DisplayTarifKlik" text="Tarif" />
                   <MenuItem fx:id="DataTransaksi" mnemonicParsing="false" onAction="#transaksiklik" text="Transaksi" />
               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Laporan">
+               <items>
+                  <MenuItem fx:id="laporankomp" mnemonicParsing="false" onAction="#laporankompklik" text="Komputer" />
+                  <MenuItem fx:id="laporanmaster" mnemonicParsing="false" onAction="#laporanklik" text="Billing" />
+               </items>
             </Menu>
         </menus>
       </MenuBar>
